@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>.</title>
+    <meta charset="utf-8" />
+    <script src="libs/header-attrs-2.8/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+    <script src="libs/xaringanExtra-webcam-0.0.1/webcam.js"></script>
+    <script id="xaringanExtra-webcam-options" type="application/json">{"width":"200","height":"200","margin":"1em"}</script>
+    <link rel="stylesheet" href="assets/venanciolab-fonts.css" type="text/css" />
+    <link rel="stylesheet" href="assets/venanciolab.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# .
+### 
+
+---
+
+
+
+
+
+
+
+
+background-image: url(figs/intro1.png)
+background-position: 95% 50%
+background-size: 45%
+
+## Introdução
+
+&lt;br /&gt;
+
+.pull-left[
+Soja e economia: 2% do PIB .font80[(EMBRAPA, 2019)]
+
+
+Bilhões de dólares gastos anualmente no controle de doenças .font80[(Osman et al., 2015)]
+]
+
+---
+
+background-image: url(https://www.researchgate.net/profile/Martin-Heil-2/publication/258202582/figure/fig7/AS:271915302518812@1441841068064/Examples-of-common-fungal-diseases-of-plants-a-Rust-on-flax-Linum-usitatissimum-C_Q640.jpg)
+background-position: 95% 50%
+background-size: 45%
+
+## Introdução
+
+&lt;br /&gt;
+
+.pull-left[
+Soja e economia: 2% do PIB .font80[(EMBRAPA, 2019)]
+
+Bilhões de dólares gastos anualmente no controle de doenças .font80[(Osman et al., 2015)]
+
+**Fungos fitopatogênicos** -  Perda de produtividade por:
+
+1. Lesão foliar
+
+2. Apodrescimento de raízes
+
+3. Danos a sementes
+
+4. Morte
+
+Agenda 2030: aumento sustentável da produtividade
+
+.footnote[García-Guzmán *et al.*, 2013]
+
+]
+
+---
+
+## O problema de pesquisa
+
+&lt;br /&gt;
+
+GWAS identificaram **SNPs causais** relacionados a resistência a doenças fúngicas, mas não **genes causais**.
+
+Métodos atuais resultam em altas taxas de falso-positivos e falso-negativos.
+
+&lt;br /&gt;
+
+![](figs/gwas_problem_1.png)&lt;!-- --&gt;
+
+**Problema:** muitos falso-negativos
+
+---
+
+## O problema de pesquisa
+
+&lt;br /&gt;
+
+GWAS identificaram **SNPs causais** relacionados a resistência a doenças fúngicas, mas não **genes causais**.
+
+Métodos atuais resultam em altas taxas de falso-positivos e falso-negativos.
+
+&lt;br /&gt;
+
+![](figs/gwas_problem_2.png)&lt;!-- --&gt;
+
+**Problema:** muitos falso-positivos
+
+---
+
+## A possível solução
+
+&lt;br /&gt;
+
+Vértices representam genes e arestas representam os coeficientes de correlação entre eles.
+
+&lt;img src="figs/redes_example1.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+Em larga escala, é possível detectar **módulos** de genes com funções similares.
+
+---
+
+## Objetivo
+
+&lt;br /&gt;
+.center[.font120[Identificar genes de soja relacionados à resistência a doenças fúngicas comuns a partir da integração de GWAS e redes de coexpressão gênica]]
+
+---
+
+background-image: url(figs/project_workflow.png)
+background-size: 100%
+background-position: 50% 30%
+
+## Metodologia
+
+---
+
+background-image: url(figs/package_logos.png)
+background-position: 95% 50%
+background-size: 40%
+
+## Desenvolvimento de softwares
+
+
+.pull-left[
+.brand-charcoal[.font130[.bold[BioNERO:]]]
+
+Pacote do R destinado a:
+- pré-processamento de dados de expressão
+- inferência de redes de coexpressão gênica
+- análises funcionais.
+
+&lt;br/ &gt;
+.brand-charcoal[.font130[.bold[cageminer:]]]
+
+Pacote do R destinado a: 
+- integrar GWAS e redes de coexpressão para priorizar genes candidatos 
+
+]
+
+---
+
+background-image: url(figs/frequency_of_snps_and_transcriptome_samples_overlap.png)
+background-position: 95% 50%
+background-size: 45% 90%
+
+
+## Descrição dos dados
+
+&lt;br /&gt;
+
+.pull-left[
+.brand-charcoal[.font130[.bold[Critério de filtragem:]]]
+
+Uma espécie deve ser representada por: 
+- amostras de transcriptoma
+- SNPs significativos
+]
+
+---
+
+background-image: url(https://crop-protection-network.s3.amazonaws.com/articles/BSR-foliar-and-stem-symptoms-A.-sisson.jpg)
+background-position: 95% 50%
+background-size: 40%
+
+## Descrição dos dados
+
+.pull-left[
+5 fungos fitopatogênicos comuns:
+
+- *Cadophora gregata:* causador da podridão parda da haste da soja
+
+.footnote[Fonte: Crop Protection Network]
+]
+
+---
+
+background-image: url(https://bsppjournals.onlinelibrary.wiley.com/cms/asset/df052881-7bbb-4915-9a88-c4b74a28c9b4/ppa12532-fig-0001-m.jpg)
+background-position: 95% 50%
+background-size: 40%
+
+## Descrição dos dados
+
+.pull-left[
+5 fungos fitopatogênicos comuns:
+
+- *Cadophora gregata:* causador da podridão parda da haste da soja
+
+- *Fusarium graminearum:* causador da fusariose
+
+.footnote[Chiotta *et al.*, 2016]
+]
+
+---
+
+background-image: url(https://bugwoodcloud.org/images/768x512/5465755.jpg)
+background-position: 95% 50%
+background-size: 40%
+
+## Descrição dos dados
+
+.pull-left[
+5 fungos fitopatogênicos comuns:
+
+- *Cadophora gregata:* causador da podridão parda da haste da soja
+
+- *Fusarium graminearum:* causador da fusariose
+
+- *Fusarium virguliforme:* causador da síndrome da morte súbita
+
+.footnote[Fonte: Daren Mueller]
+]
+
+---
+
+background-image: url(https://phytus.s3.amazonaws.com/apps/clubephytus-api/midia/a/5fcdcbb8/thumbnail.jpg)
+background-position: 95% 50%
+background-size: 40%
+
+## Descrição dos dados
+
+.pull-left[
+5 fungos fitopatogênicos comuns:
+
+- *Cadophora gregata:* causador da podridão parda da haste da soja
+
+- *Fusarium graminearum:* causador da fusariose
+
+- *Fusarium virguliforme:* causador da síndrome da morte súbita
+
+- *Macrophomina phaseolina:* causador da podridão de carvão
+
+.footnote[Fonte: Elevagro]
+]
+
+---
+
+background-image: url(https://www.agrolink.com.br/upload/problemas/Phakopsora_pachyrhizi57.jpg)
+background-position: 95% 50%
+background-size: 40%
+
+## Descrição dos dados
+
+.pull-left[
+5 fungos fitopatogênicos comuns:
+
+- *Cadophora gregata:* causador da podridão parda da haste da soja
+
+- *Fusarium graminearum:* causador da fusariose
+
+- *Fusarium virguliforme:* causador da síndrome da morte súbita
+
+- *Macrophomina phaseolina:* causador da podridão de carvão
+
+- *Phakopsora pachyrhizi:* causador da ferrugem asiática
+
+.footnote[Fonte: Agrolink]
+]
+
+---
+
+
+## Extração de genes candidatos
+
+&lt;br /&gt;
+
+&lt;img src="figs/simulation_genes_per_sliding_window.png" width="900px" height="500px" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Priorização de genes candidatos
+
+![](figs/workflow.png)&lt;!-- --&gt;
+
+---
+
+## Priorização de genes candidatos
+
+.pull-left[
+
+&lt;br /&gt;
+
+- *Cadophora gregata:* **11** 
+
+- *Fusarium graminearum:* **59** 
+
+- *Fusarium virguliforme:* **191** 
+
+- *Macrophomina phaseolina:* **8** 
+
+- *Phakopsora pachyrhizi:* **3** 
+
+Defesa **altamente espécie-específica**
+
+]
+
+.pull-right[
+![](figs/venn_diagram_candidates.png)&lt;!-- --&gt;
+]
+
+---
+
+## Seleção de genes mais promissores
+
+&lt;br /&gt;
+Atribuição de *scores* aos genes candidatos priorizados:
+
+.font140[
+`$$S_i = r_{pb} \kappa$$`
+] 
+
+.center[
+onde:
+
+`\(\kappa\)` = 2 se o gene for um fator de transcrição
+
+`\(\kappa\)` = 2 se o gene for um *hub* (muito conectado)
+
+`\(\kappa\)` = 3 se o gene for um fator de transcrição e um *hub*
+
+]
+
+---
+
+background-image: url(figs/biorender_figure.png)
+background-size: 85% 85%
+background-position: 50% 90%
+
+.center[
+.red[*C. gregata*] &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+.blue[*F. graminearum*] &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+.brown[*F. virguliforme*] &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+.green[*M. phaseolina*] &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+.purple[*P. pachyrhizi*]
+]
+
+---
+
+## Seleção de cultivares de interesse
+
+&lt;br /&gt;
+
+
+
+.pull-left[
+&lt;img src="figs/table1.png" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+.pull-right[
+&lt;img src="figs/table2.png" style="display: block; margin: auto auto auto 0;" /&gt;
+
+]
+
+Ainda há espaço para piramidar alelos de resistência via MAS ou edição genômica
+
+---
+
+background-image: url(http://www.mcgilltribune.com/wp-content/uploads/2019/11/gene_editing.jpg)
+background-position: 95% 50%
+background-size: 40%
+
+## Conclusão
+
+.pull-left[
+Identificamos genes candidatos promissores para desenvolver plantas de soja resistentes a 5 fungos fitopagênicos comuns por:
+
+- Edição genômica
+
+- Transgenia
+
+.footnote[Fonte: The McGill Tribune]
+
+]
+
+---
+
+background-image: url(https://www.agroscope.admin.ch/agroscope/en/home/topics/plant-production/plant-breeding/ackerpflanzen/selection_soja/_jcr_content/par/columncontrols/items/1/column/image/image.imagespooler.jpg/1473888418017/selection_soja_fleur.jpg)
+background-position: 95% 50%
+background-size: 40%
+
+## Conclusão
+
+.pull-left[
+Identificamos genes candidatos promissores para desenvolver plantas de soja resistentes a 5 fungos fitopagênicos comuns por:
+
+- Edição genômica
+
+- Transgenia
+
+Identificamos acessos mais resistentes do banco de germoplasma do USDA que podem ser usados como genitores em programas de melhoramento;
+
+.footnote[Fonte: Agroscope]
+]
+
+---
+
+background-image: url(figs/package_logos.png)
+background-position: 95% 50%
+background-size: 40%
+
+## Conclusão
+
+.pull-left[
+Identificamos genes candidatos promissores para desenvolver plantas de soja resistentes a 5 fungos fitopagênicos comuns por:
+
+- Edição genômica
+
+- Transgenia
+
+Identificamos acessos mais resistentes do banco de germoplasma do USDA que podem ser usados como genitores em programas de melhoramento;
+
+
+Desenvolvemos 2 produtos (pacotes do R) que podem ser usados pela comunidade científica.
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"navigation": {
+"scroll": false
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
