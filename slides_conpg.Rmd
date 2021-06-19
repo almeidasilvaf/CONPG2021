@@ -33,7 +33,7 @@ options(htmltools.dir.version = TRUE)
 xaringanExtra::use_panelset()
 ```
 
-background-image: url(figs/intro1.png)
+background-image: url(https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/intro1.png?raw=true)
 background-position: 95% 50%
 background-size: 45%
 
@@ -92,7 +92,7 @@ Métodos atuais resultam em altas taxas de falso-positivos e falso-negativos.
 <br />
 
 ```{r}
-knitr::include_graphics("figs/gwas_problem_1.png")
+knitr::include_graphics("https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/gwas_problem_1.png?raw=true")
 ```
 
 **Problema:** muitos falso-negativos
@@ -110,7 +110,7 @@ Métodos atuais resultam em altas taxas de falso-positivos e falso-negativos.
 <br />
 
 ```{r}
-knitr::include_graphics("figs/gwas_problem_2.png")
+knitr::include_graphics("https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/gwas_problem_2.png?raw=true")
 ```
 
 **Problema:** muitos falso-positivos
@@ -119,12 +119,13 @@ knitr::include_graphics("figs/gwas_problem_2.png")
 
 ## A possível solução
 
+.footnote[Bandara *et al.*, 2020]
 <br />
 
 Vértices representam genes e arestas representam os coeficientes de correlação entre eles.
 
 ```{r echo=FALSE, out.width='75%', fig.align='center'}
-knitr::include_graphics("figs/redes_example1.png")
+knitr::include_graphics("https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/redes_example1.png?raw=true")
 ```
 
 Em larga escala, é possível detectar **módulos** de genes com funções similares.
@@ -158,7 +159,22 @@ forceNetwork(Links = MisLinks, Nodes = MisNodes,
 
 ---
 
-background-image: url(figs/package_logos.png)
+## Metodologia: o primeiro desafio
+
+<br />
+```{r out.width='90%', fig.align='center'}
+knitr::include_graphics("figs/planta_paper.png")
+```
+
+
+
+.center[.bold[Inferência de redes:] ~1000 linhas de código]
+
+.center[.bold[Priorização de candidatos:] ~200 linhas de código]
+
+---
+
+background-image: url(https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/package_logos.png?raw=true)
 background-position: 95% 50%
 background-size: 40%
 
@@ -183,7 +199,7 @@ Pacote do R destinado a:
 
 ---
 
-background-image: url(figs/project_workflow.png)
+background-image: url(https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/project_workflow.png?raw=true)
 background-size: 100%
 background-position: 50% 30%
 
@@ -191,7 +207,7 @@ background-position: 50% 30%
 
 ---
 
-background-image: url(figs/frequency_of_snps_and_transcriptome_samples_overlap.png)
+background-image: url(https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/frequency_of_snps_and_transcriptome_samples_overlap.png?raw=true)
 background-position: 95% 50%
 background-size: 45% 90%
 
@@ -310,22 +326,22 @@ background-size: 40%
 
 ---
 
+## Priorização de genes candidatos
 
-## Extração de genes candidatos
-
-<br />
-
-```{r all_cand, out.width='900px', out.height='500px', fig.align='center'}
-knitr::include_graphics("figs/simulation_genes_per_sliding_window.png")
+```{r workflow_cageminer, echo=FALSE}
+knitr::include_graphics("https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/workflow.png?raw=true")
 ```
 
 ---
 
 ## Priorização de genes candidatos
 
-```{r workflow_cageminer, echo=FALSE}
-knitr::include_graphics("figs/workflow.png")
+<br />
+
+```{r all_cand, out.width='900px', out.height='500px', fig.align='center'}
+knitr::include_graphics("https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/simulation_genes_per_sliding_window.png?raw=true")
 ```
+
 
 ---
 
@@ -351,7 +367,7 @@ Defesa **altamente espécie-específica**
 
 .pull-right[
 ```{r venn, echo=FALSE}
-knitr::include_graphics("figs/venn_diagram_candidates.png")
+knitr::include_graphics("https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/venn_diagram_candidates.png?raw=true")
 ```
 ]
 
@@ -423,16 +439,18 @@ formattable(ppachyrhizi, align=c('l', 'l', 'l'))
 
 ---
 
-background-image: url(figs/biorender_figure.png)
+background-image: url(https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/plant_defense_to_fungi_600dpi.png?raw=true)
 background-size: 85% 85%
 background-position: 50% 90%
 
 .center[
-.red[*C. gregata*] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-.blue[*F. graminearum*] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-.brown[*F. virguliforme*] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+.bold[
+.brown[*C. gregata*] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+.bluebr[*F. graminearum*] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+.brownbr[*F. virguliforme*] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 .green[*M. phaseolina*] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 .purple[*P. pachyrhizi*]
+]
 ]
 
 ---
@@ -446,7 +464,7 @@ background-position: 50% 90%
 --
 
 .pull-left[
-.blue[.bold[A &rarr; G]] 👍🏼  
+.blue[.bold[A &rarr; G]] 😁👍🏼  
 
 GG = 2
 
@@ -460,7 +478,7 @@ AA = 0
 
 .pull-right[
 
-.red[.bold[A &rarr; G]] 👎🏻  
+.red[.bold[A &rarr; G]] ☹️👎🏻  
 
 GG = 0
 
@@ -492,13 +510,13 @@ formattable(acc2,
 
 .pull-left[
 ``` {r echo=FALSE, fig.align='right'}
-knitr::include_graphics("figs/table1.png")
+knitr::include_graphics("https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/table1.png?raw=true")
 ```
 ]
 
 .pull-right[
 ``` {r echo=FALSE, fig.align='left'}
-knitr::include_graphics("figs/table2.png")
+knitr::include_graphics("https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/table2.png?raw=true")
 ```
 
 ]
@@ -539,14 +557,18 @@ Identificamos genes candidatos promissores para desenvolver plantas de soja resi
 
 - Transgenia
 
-Identificamos acessos mais resistentes do banco de germoplasma do USDA que podem ser usados como genitores em programas de melhoramento;
+Identificamos acessos mais resistentes do banco de germoplasma do USDA:
+
+- Genitores em programas de melhoramento
+
+- Editados com CRISPR-Cas para inserir os alelos faltantes
 
 .footnote[Fonte: Agroscope]
 ]
 
 ---
 
-background-image: url(figs/package_logos.png)
+background-image: url(https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/package_logos.png?raw=true)
 background-position: 95% 50%
 background-size: 40%
 
@@ -559,8 +581,22 @@ Identificamos genes candidatos promissores para desenvolver plantas de soja resi
 
 - Transgenia
 
-Identificamos acessos mais resistentes do banco de germoplasma do USDA que podem ser usados como genitores em programas de melhoramento;
+Identificamos acessos mais resistentes do banco de germoplasma do USDA:
 
+- Genitores em programas de melhoramento
+
+- Editados com CRISPR-Cas para inserir os alelos faltantes
 
 Desenvolvemos 2 produtos (pacotes do R) que podem ser usados pela comunidade científica.
 ]
+
+---
+
+background-image: url(figs/agradecimentos.png)
+background-size: cover
+
+## Agradecimentos
+
+
+
+

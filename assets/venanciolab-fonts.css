@@ -135,6 +135,9 @@ h1, h2, h3 {
 .gray { color: gray; }
 .grey { color: gray; }
 .brown { color: brown; }
+.bluebr { color: #294ECD; }
+.brownbr { color: #9C8802; }
+
 
 .bold { font-weight: bold; }
 .bolder { font-weight: bolder; }
