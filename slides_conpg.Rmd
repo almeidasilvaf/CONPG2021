@@ -395,50 +395,6 @@ $\kappa$ = 3 se o gene for um fator de transcrição e um *hub*
 
 ---
 
-## Seleção de genes mais promissores
-
-```{r genes_promissores_tabela}
-gene_role <- readr::read_csv(
-  "data/top_candidates_and_role.csv"
-)
-```
-
-.panelset[
-.panel[.panel-name[C. gregata]
-```{r cgregata_genetable}
-suppressPackageStartupMessages(library(formattable))
-cgregata <- gene_role[gene_role$`Resistance to` == "C. gregata", -3]
-formattable(cgregata, align=c('l', 'l', 'l'))
-```
-]
-.panel[.panel-name[F. graminearum]
-```{r fgraminearum_genetable}
-fgraminearum <- gene_role[gene_role$`Resistance to` == "F. graminearum", -3]
-formattable(fgraminearum, align=c('l', 'l', 'l'))
-```
-]
-.panel[.panel-name[F. virguliforme]
-```{r fvirguliforme_genetable}
-fvirguliforme <- gene_role[gene_role$`Resistance to` == "F. virguliforme", -3]
-formattable(fvirguliforme, align=c('l', 'l', 'l'))
-```
-]
-.panel[.panel-name[M. phaseolina]
-```{r mphaseolina_genetable}
-mphaseolina <- gene_role[gene_role$`Resistance to` == "M. phaseolina", -3]
-formattable(mphaseolina, align=c('l', 'l', 'l'))
-```
-]
-.panel[.panel-name[P. pachyrhizi]
-```{r ppachyrhizi_genetable}
-ppachyrhizi <- gene_role[gene_role$`Resistance to` == "P. pachyrhizi", -3]
-formattable(ppachyrhizi, align=c('l', 'l', 'l'))
-```
-]
-]
-
----
-
 background-image: url(https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/plant_defense_to_fungi_600dpi.png?raw=true)
 background-size: 85% 85%
 background-position: 50% 90%
