@@ -50,7 +50,7 @@ Bilhões de dólares gastos anualmente no controle de doenças .font80[(Osman et
 
 ---
 
-background-image: url(https://www.researchgate.net/profile/Martin-Heil-2/publication/258202582/figure/fig7/AS:271915302518812@1441841068064/Examples-of-common-fungal-diseases-of-plants-a-Rust-on-flax-Linum-usitatissimum-C_Q640.jpg)
+background-image: url(figs/intro_diseases.png)
 background-position: 95% 50%
 background-size: 45%
 
@@ -75,7 +75,7 @@ Bilhões de dólares gastos anualmente no controle de doenças .font80[(Osman et
 
 Agenda 2030: aumento sustentável da produtividade
 
-.footnote[García-Guzmán *et al.*, 2013]
+.footnote[Fonte: Crop Protection Network | Chiotta *et al.*, 2016 | Daren Mueller | Elevagro | Agrolink]
 
 ]
 
@@ -159,46 +159,6 @@ forceNetwork(Links = MisLinks, Nodes = MisNodes,
 
 ---
 
-## Metodologia: o primeiro desafio
-
-<br />
-```{r out.width='90%', fig.align='center'}
-knitr::include_graphics("figs/planta_paper.png")
-```
-
-
-
-.center[.bold[Inferência de redes:] ~1000 linhas de código]
-
-.center[.bold[Priorização de candidatos:] ~200 linhas de código]
-
----
-
-background-image: url(https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/package_logos.png?raw=true)
-background-position: 95% 50%
-background-size: 40%
-
-## Desenvolvimento de softwares
-
-
-.pull-left[
-.brand-charcoal[.font130[.bold[BioNERO:]]]
-
-Pacote do R destinado a:
-- pré-processamento de dados de expressão
-- inferência de redes de coexpressão gênica
-- análises funcionais.
-
-<br/ >
-.brand-charcoal[.font130[.bold[cageminer:]]]
-
-Pacote do R destinado a: 
-- integrar GWAS e redes de coexpressão para priorizar genes candidatos 
-
-]
-
----
-
 background-image: url(https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/project_workflow.png?raw=true)
 background-size: 100%
 background-position: 50% 30%
@@ -226,103 +186,13 @@ Uma espécie deve ser representada por:
 
 ---
 
-background-image: url(https://crop-protection-network.s3.amazonaws.com/articles/BSR-foliar-and-stem-symptoms-A.-sisson.jpg)
-background-position: 95% 50%
-background-size: 40%
+background-image: url(figs/metodos_patogenos.png)
+background-size: 80%
+background-position: 50% 70%
 
 ## Descrição dos dados
 
-.pull-left[
-5 fungos fitopatogênicos comuns:
-
-- *Cadophora gregata:* causador da podridão parda da haste da soja
-
-.footnote[Fonte: Crop Protection Network]
-]
-
----
-
-background-image: url(https://bsppjournals.onlinelibrary.wiley.com/cms/asset/df052881-7bbb-4915-9a88-c4b74a28c9b4/ppa12532-fig-0001-m.jpg)
-background-position: 95% 50%
-background-size: 40%
-
-## Descrição dos dados
-
-.pull-left[
-5 fungos fitopatogênicos comuns:
-
-- *Cadophora gregata:* causador da podridão parda da haste da soja
-
-- *Fusarium graminearum:* causador da fusariose
-
-.footnote[Chiotta *et al.*, 2016]
-]
-
----
-
-background-image: url(https://bugwoodcloud.org/images/768x512/5465755.jpg)
-background-position: 95% 50%
-background-size: 40%
-
-## Descrição dos dados
-
-.pull-left[
-5 fungos fitopatogênicos comuns:
-
-- *Cadophora gregata:* causador da podridão parda da haste da soja
-
-- *Fusarium graminearum:* causador da fusariose
-
-- *Fusarium virguliforme:* causador da síndrome da morte súbita
-
-.footnote[Fonte: Daren Mueller]
-]
-
----
-
-background-image: url(https://phytus.s3.amazonaws.com/apps/clubephytus-api/midia/a/5fcdcbb8/thumbnail.jpg)
-background-position: 95% 50%
-background-size: 40%
-
-## Descrição dos dados
-
-.pull-left[
-5 fungos fitopatogênicos comuns:
-
-- *Cadophora gregata:* causador da podridão parda da haste da soja
-
-- *Fusarium graminearum:* causador da fusariose
-
-- *Fusarium virguliforme:* causador da síndrome da morte súbita
-
-- *Macrophomina phaseolina:* causador da podridão de carvão
-
-.footnote[Fonte: Elevagro]
-]
-
----
-
-background-image: url(https://www.agrolink.com.br/upload/problemas/Phakopsora_pachyrhizi57.jpg)
-background-position: 95% 50%
-background-size: 40%
-
-## Descrição dos dados
-
-.pull-left[
-5 fungos fitopatogênicos comuns:
-
-- *Cadophora gregata:* causador da podridão parda da haste da soja
-
-- *Fusarium graminearum:* causador da fusariose
-
-- *Fusarium virguliforme:* causador da síndrome da morte súbita
-
-- *Macrophomina phaseolina:* causador da podridão de carvão
-
-- *Phakopsora pachyrhizi:* causador da ferrugem asiática
-
-.footnote[Fonte: Agrolink]
-]
+.footnote[Fonte: Crop Protection Network | Chiotta *et al.*, 2016 | Daren Mueller | Elevagro | Agrolink]
 
 ---
 
@@ -420,7 +290,7 @@ background-position: 50% 90%
 --
 
 .pull-left[
-.blue[.bold[A &rarr; G]] 😁👍🏼  
+.blue[.bold[A &rarr; G]] `r emo::ji("grinning_face")` 👍🏼  
 
 GG = 2
 
@@ -434,7 +304,7 @@ AA = 0
 
 .pull-right[
 
-.red[.bold[A &rarr; G]] ☹️👎🏻  
+.red[.bold[A &rarr; G]] `r emo::ji("fearful_face")` 👎🏻  
 
 GG = 0
 
@@ -478,6 +348,32 @@ knitr::include_graphics("https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/ma
 ]
 
 Ainda há espaço para piramidar alelos de resistência via MAS ou edição genômica
+
+---
+
+background-image: url(https://github.com/almeidasilvaf/GCN_GWAS_fungi/blob/main/figs/package_logos.png?raw=true)
+background-position: 95% 50%
+background-size: 40%
+
+## Desenvolvimento de softwares
+
+
+.pull-left[
+.brand-charcoal[.font130[.bold[BioNERO:]]]
+
+Pacote do R destinado a:
+- pré-processamento de dados de expressão
+- inferência de redes de coexpressão gênica
+- análises funcionais.
+
+<br/ >
+.brand-charcoal[.font130[.bold[cageminer:]]]
+
+Pacote do R destinado a: 
+- integrar GWAS e redes de coexpressão para priorizar genes candidatos 
+
+]
+
 
 ---
 
